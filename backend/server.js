@@ -30,8 +30,8 @@ app.use(
 app.use(express.json());
 
 // Mount your auth & task routes (adjust filenames if yours are authRoutes.js / taskRoutes.js)
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/tasks', require('./routes/taskRoutes'));
 
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', service: 'taskit-api' });
